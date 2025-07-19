@@ -1,0 +1,5 @@
+eval "$(starship init bash)"
+if [ -f "$HOME/.bash_aliases" ]; then
+  source "$HOME/.bash_aliases"
+fi
+source ~/.local/share/omarchy/default/bash/rc
