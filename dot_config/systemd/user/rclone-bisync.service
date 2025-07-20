@@ -1,0 +1,8 @@
+[Unit]
+Description=Rclone Bisync: Google Drive <-> Local
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/share/bin/rclone_bisync.sh
+
