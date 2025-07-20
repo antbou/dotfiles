@@ -1,5 +1,10 @@
-eval "$(starship init bash)"
 if [ -f "$HOME/.bash_aliases" ]; then
   source "$HOME/.bash_aliases"
 fi
+if [ -f "$HOME/.bash_exports" ]; then
+  source "$HOME/.bash_exports"
+fi
+eval "$(starship init bash)"
 source ~/.local/share/omarchy/default/bash/rc
+
+PATH=~/.console-ninja/.bin:$PATH
