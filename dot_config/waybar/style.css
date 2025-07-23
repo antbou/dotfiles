@@ -23,15 +23,16 @@
   all: initial;
   padding: 0 6px;
   margin: 0 1.5px;
+  min-width: 9px;
 }
 
 #tray,
 #cpu,
+#battery,
 #network,
 #bluetooth,
 #pulseaudio,
 #clock,
-#battery,
 #custom-power-menu {
   min-width: 12px;
   margin: 0 7.5px;
