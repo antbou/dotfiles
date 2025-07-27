@@ -13,4 +13,6 @@ if ! ping -c 1 8.8.8.8 >/dev/null 2>&1; then
 fi
 
 # Run rclone bisync
-rclone bisync "$REMOTE" "$LOCAL" --log-level ERROR --log-file "$LOGFILE"
+#rclone bisync "$REMOTE" "$LOCAL" --log-level ERROR --log-file "$LOGFILE"
+echo "$TIMESTAMP - Starting rclone bisync with --force..." >>"$LOGFILE"
+rclone bisync "$REMOTE" "$LOCAL" --force --log-level INFO --log-file "$LOGFILE"
