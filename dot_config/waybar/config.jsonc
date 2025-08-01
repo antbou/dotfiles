@@ -8,6 +8,7 @@
   "modules-center": ["clock"],
   "modules-right": [
     "group/tray-expander",
+    "power-profiles-daemon",
     "bluetooth",
     "network",
     "pulseaudio",
@@ -42,6 +43,17 @@
     "interval": 5,
     "format": "󰍛",
     "on-click": "alacritty -e btop"
+  },
+  "power-profiles-daemon": {
+  "format": "{icon}",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
   },
   "clock": {
     "format": "{:%A %H:%M}",
