@@ -1,3 +1,4 @@
 alias myip='ip a | grep inet'
 alias ll='ls -alh'
 alias reload='source ~/.bashrc'
+alias cm='chezmoi'
