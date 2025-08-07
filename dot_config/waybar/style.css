@@ -42,7 +42,10 @@
   min-width: 12px;
   margin: 0 7.5px;
 }
-
+#custom-omarchy {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
 #pulseaudio,
 #battery {
   letter-spacing: -0.2px;
