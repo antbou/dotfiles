@@ -36,25 +36,29 @@
 #network,
 #bluetooth,
 #pulseaudio,
-#clock,
 #power-profiles-daemon,
-#custom-power-menu {
+#custom-omarchy,
+#custom-update {
   min-width: 12px;
   margin: 0 7.5px;
-}
-#custom-omarchy {
-  min-width: 12px;
-  margin: 0 7.5px;
-}
-#pulseaudio,
-#battery {
-  letter-spacing: -0.2px;
 }
 
 #custom-expand-icon {
-  margin-right: 5px;
+  margin-right: 7px;
 }
 
 tooltip {
   padding: 2px;
+}
+
+#custom-update {
+  font-size: 10px;
+}
+
+#clock {
+  margin-left: 8.75px;
+}
+
+.hidden {
+  opacity: 0;
 }

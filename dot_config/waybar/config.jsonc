@@ -8,11 +8,11 @@
   "modules-center": ["clock", "custom/update"],
   "modules-right": [
     "group/tray-expander",
-    "power-profiles-daemon",
     "bluetooth",
     "network",
     "pulseaudio",
     "cpu",
+    "power-profiles-daemon",
     "battery"
   ],
   "hyprland/workspaces": {
@@ -57,20 +57,9 @@
     "format": "󰍛",
     "on-click": "alacritty -e btop"
   },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    }
-  },
   "clock": {
-    "format": "{:%A %H:%M}",
-    "format-alt": "{:%d %B W%V %Y}",
+    "format": "{:L%A %H:%M}",
+    "format-alt": "{:L%d %B W%V %Y}",
     "tooltip": false,
     "on-click-right": "omarchy-cmd-tzupdate"
   },
@@ -86,6 +75,17 @@
     "interval": 3,
     "spacing": 1,
     "on-click": "alacritty --class=Impala -e impala"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
   },
   "battery": {
     "format": "{capacity}% {icon}",
