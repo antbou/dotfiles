@@ -2,3 +2,13 @@ alias myip='ip a | grep inet'
 alias ll='ls -alh'
 alias reload='source ~/.bashrc'
 alias cm='chezmoi'
+markitdown() {
+  local file="$(realpath "$1")"
+  local dir="$(dirname "$file")"
+  local name="$(basename "$file")"
+  shift
+  docker run --rm -i \
+    -v "$dir":/data \
+    markitdown:latest \
+    "/data/$name" "$@"
+}

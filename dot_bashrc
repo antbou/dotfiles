@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything (leave this at the top of this file)
+[[ $- != *i* ]] && return
+
 if [ -f "$HOME/.bash_aliases" ]; then
   source "$HOME/.bash_aliases"
 fi
@@ -5,6 +8,29 @@ if [ -f "$HOME/.bash_exports" ]; then
   source "$HOME/.bash_exports"
 fi
 eval "$(starship init bash)"
-source ~/.local/share/omarchy/default/bash/rc
+# /etc/omarchy.conf is written by omarchy-dev-link. When absent, force the
+# package default instead of preserving a stale inherited dev-link value before
+# we decide which rc file to source.
+if [[ -f /etc/omarchy.conf ]]; then
+  source /etc/omarchy.conf
+  export OMARCHY_PATH="${OMARCHY_PATH:-/usr/share/omarchy}"
+else
+  export OMARCHY_PATH=/usr/share/omarchy
+fi
+source "$OMARCHY_PATH/default/bash/rc"
 
-PATH=~/.console-ninja/.bin:$PATH
+# Start ssh-agent if it's not already running
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval "$(ssh-agent -s)" >/dev/null
+  ssh-add
+fi
+
+
+
+# Created by `pipx` on 2025-11-12 16:16:07
+export PATH="$PATH:/home/antho/.local/bin"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/antho/.lmstudio/bin"
+# End of LM Studio CLI section
+
